@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gowtham TB - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            color: #1f2937;
+        }
+        .text-gradient {
+            background-image: linear-gradient(to right, #4c1d95, #7c3aed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Magical animated gradient background */
+        body {
+            background: linear-gradient(120deg, #4c1d95, #7c3aed, #0084ffc4, #ff4d4d);
+            background-size: 400% 400%;
+            animation: miracleBg 18s ease infinite;
+            color: #1f2937;
+            font-family: 'Inter', sans-serif;
+        }
+        @keyframes miracleBg {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
+        }
+
+        /* Glowing header and nav */
+        header {
+            box-shadow: 0 0 32px #7c3aed;
+            border-bottom: 2px solid #ffd700;
+            background: rgba(44, 19, 94, 0.95);
+        }
+        header a {
+            text-shadow: 0 0 8px #ffd700, 0 0 4px #7c3aed;
+            transition: text-shadow 0.2s, color 0.2s;
+        }
+        header a:hover {
+            color: #ffd700 !important;
+            text-shadow: 0 0 16px #ffd700, 0 0 8px #7c3aed;
+        }
+
+        /* Magical floating sparkles */
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            pointer-events: none;
+            z-index: 0;
+            background: url('https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/2728.png') repeat;
+            opacity: 0.08;
+            animation: sparkleFloat 24s linear infinite;
+        }
+        @keyframes sparkleFloat {
+            0% {background-position: 0 0;}
+            100% {background-position: 200px 400px;}
+        }
+
+        /* Hero section miracle effect */
+        section .bg-gradient-to-r {
+            box-shadow: 0 0 32px #7c3aed, 0 0 32px #ffd700 inset;
+            border: 2px solid #ffd700;
+            animation: miracleGlow 2.5s infinite alternate;
+        }
+        @keyframes miracleGlow {
+            0% { box-shadow: 0 0 32px #ffd700, 0 0 8px #7c3aed;}
+            100% { box-shadow: 0 0 48px #ffd700, 0 0 24px #7c3aed;}
+        }
+
+        /* Avatar hover effect */
+        section #about .rounded-full {
+            box-shadow: 0 0 32px #ffd700, 0 0 16px #7c3aed;
+            transition: box-shadow 0.3s, transform 0.3s;
+        }
+        section #about .rounded-full:hover {
+            box-shadow: 0 0 64px #ffd700, 0 0 32px #7c3aed;
+            transform: scale(1.08) rotate(-2deg);
+        }
+
+        /* Project card miracle effect */
+        section#projects .bg-white {
+            border: 2px solid #7c3aed;
+            box-shadow: 0 0 24px #7c3aed, 0 0 24px #ffd700 inset;
+            transition: box-shadow 0.3s, transform 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        section#projects .bg-white:hover {
+            box-shadow: 0 0 48px #ffd700, 0 0 32px #7c3aed;
+            transform: scale(1.07) rotate(1deg);
+        }
+        section#projects .bg-white::after {
+            content: '';
+            position: absolute;
+            top: 8px; right: 8px; width: 28px; height: 28px;
+            background: url('https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/2728.png') no-repeat center/contain;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        section#projects .bg-white:hover::after {
+            opacity: 1;
+            animation: sparkle 1.2s infinite;
+        }
+        @keyframes sparkle {
+            0%, 100% { transform: scale(1) rotate(0deg);}
+            50% { transform: scale(1.3) rotate(20deg);}
+        }
+
+        /* Glowing contact button */
+        section#contact a {
+            box-shadow: 0 0 16px #ffd700, 0 0 8px #7c3aed;
+            border: 2px solid #ffd700;
+            animation: miracleGlow 2.5s infinite alternate;
+        }
+
+        /* Footer miracle effect */
+        footer {
+            background: linear-gradient(90deg, #7c3aed 60%, #ffd700 100%);
+            color: #222 !important;
+            font-weight: bold;
+            box-shadow: 0 0 24px #ffd700;
+            border-top: 2px solid #ffd700;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex flex-col min-h-screen">
+
+    <!-- Header/Navigation -->
+    <header class="bg-gray-900 text-white shadow-lg">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold tracking-wider text-white">Shanmuga Priyan</a>
+            <div class="space-x-4 hidden md:flex">
+                <a href="#about" class="hover:text-purple-400 transition-colors">About</a>
+                <a href="#projects" class="hover:text-purple-400 transition-colors">Projects</a>
+                <a href="#contact" class="hover:text-purple-400 transition-colors">Contact</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-800 text-white transition-transform transform -translate-y-full">
+            <a href="#about" class="block py-2 px-4 hover:bg-gray-700 transition-colors">About</a>
+            <a href="#projects" class="block py-2 px-4 hover:bg-gray-700 transition-colors">Projects</a>
+            <a href="#contact" class="block py-2 px-4 hover:bg-gray-700 transition-colors">Contact</a>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- Hero Section -->
+        <section class="container mx-auto px-4 py-16 text-center">
+            <div class="p-8 md:p-12 lg:p-16 bg-gradient-to-r from-purple-800 to-purple-600 rounded-lg shadow-xl text-white">
+                <h1 class="text-4xl md:text-5xl font-extrabold mb-4 tracking-tight">Hello, I'm Shanmuga Priyan</h1>
+                <p class="text-lg md:text-xl font-light">PHOTOGRAPER | GAMER | RIDER</p>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="container mx-auto px-4 py-16 flex flex-col md:flex-row items-center gap-8">
+            <div class="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden shadow-xl transform transition-transform hover:scale-105">
+                <img src="shan.jpeg" alt="Gowtham TB" class="w-full h-full object-cover">
+            </div>
+            <div class="text-center md:text-left md:flex-1">
+                <h2 class="text-3xl font-bold mb-4 text-gray-800 text-gradient">About Me</h2>
+                <p class="text-lg text-gray-700 leading-relaxed max-w-2xl mx-auto md:mx-0">
+                    I am Shanmuga Priyan,I am a gamer, Photograper, and Rider.
+                </p>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="container mx-auto px-4 py-16 text-center">
+            <h2 class="text-3xl font-bold mb-8 text-gray-800 text-gradient">My Projects</h2>
+            <div class="flex justify-center">
+                <!-- Project Card -->
+                <div class="bg-white p-6 rounded-lg shadow-xl transition-transform hover:scale-105 w-full md:w-1/2 lg:w-1/3">
+                    <h3 class="text-2xl font-semibold mb-2 text-gray-900">Shanmuga Bike Booking Showroom</h3>
+                    <p class="text-gray-600 mb-4">Is a Booking wedside, Where the rider buy there "BIKE".</p>
+                    <a href="bike.html" class="inline-block px-6 py-2 rounded-full font-semibold text-white bg-purple-600 hover:bg-purple-700 transition-colors">View Project</a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section id="contact" class="container mx-auto px-4 py-16 text-center">
+            <h2 class="text-3xl font-bold mb-4 text-gray-800 text-gradient">Contact Me</h2>
+            <p class="text-lg text-gray-700 mb-8">Feel free to get in touch for collaborations or opportunities.</p>
+            <a href="mailto:mgowthamtb@gmail.com" class="inline-block px-8 py-3 rounded-full font-semibold text-white bg-purple-600 hover:bg-purple-700 transition-colors transform hover:scale-105 shadow-lg">
+                Send an Email
+            </a>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white text-center py-4 mt-8">
+        <p class="text-sm">© 2025 Shanmuga Priyan | Portfolio Website</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('transform');
+            mobileMenu.classList.toggle('-translate-y-full');
+        });
+    </script>
+</body>
+</html>

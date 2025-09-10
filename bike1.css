@@ -1,0 +1,264 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Orbitron', 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  color: #fff;
+  min-height: 100vh;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+  animation: fadeInDown 1s ease-out;
+}
+
+header h1 {
+  font-size: 2.7rem;
+  text-align: center;
+  margin-top: 30px;
+  letter-spacing: 2px;
+  text-shadow: 0 0 30px #ff1a1a, 0 0 10px #b30000;
+  font-family: 'Orbitron', 'Segoe UI', Arial, sans-serif;
+  animation: neon-flicker 2s infinite alternate;
+}
+
+@keyframes neon-flicker {
+  from { text-shadow: 0 0 10px #ff1a1a, 0 0 5px #b30000; }
+  to { text-shadow: 0 0 40px #ff1a1a, 0 0 20px #b30000; }
+}
+
+header p {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #ff1a1a;
+  text-shadow: 0 0 10px #ff1a1a;
+  font-family: 'Orbitron', 'Segoe UI', Arial, sans-serif;
+}
+
+.bike-gallery {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 30px 0;
+}
+
+.bike-gallery h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #ff1a1a;
+  text-shadow: 0 0 10px #b30000;
+  margin-bottom: 30px;
+  font-family: 'Orbitron', 'Segoe UI', Arial, sans-serif;
+}
+
+.bikes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.bike-card {
+  background: rgba(20, 20, 20, 0.95);
+  border-radius: 18px;
+  box-shadow: 0 8px 32px 0 #ff1a1a80;
+  border: 2px solid #b30000;
+  padding: 20px;
+  margin: 20px;
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+  position: relative;
+}
+
+.bike-card:hover {
+  transform: scale(1.07) rotate(-2deg);
+  box-shadow: 0 16px 40px 0 #ff1a1ae0;
+  border-color: #ff1a1a;
+}
+
+.bike-card img {
+  width: 180px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 4px 16px #b3000080;
+  transition: box-shadow 0.3s;
+  border: 2px solid #ff1a1a;
+}
+
+.bike-card img:hover {
+  box-shadow: 0 8px 32px #ff1a1a80;
+}
+
+.bike-card h3 {
+  margin: 15px 0 10px 0;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  color: #ff1a1a;
+  text-shadow: 0 0 8px #b30000;
+  font-family: 'Orbitron', 'Segoe UI', Arial, sans-serif;
+}
+
+button,
+.dashboard-btn {
+  background: linear-gradient(90deg, #b30000 0%, #ff1a1a 100%);
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  padding: 10px 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px #b30000;
+  transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+  font-weight: bold;
+  font-family: 'Orbitron', 'Segoe UI', Arial, sans-serif;
+  letter-spacing: 1px;
+}
+
+button:hover,
+.dashboard-btn:hover {
+  background: linear-gradient(90deg, #ff1a1a 0%, #b30000 100%);
+  transform: scale(1.12);
+  box-shadow: 0 4px 16px #ff1a1a;
+}
+
+/* Booking Form as Bike */
+.booking-form {
+  position: relative;
+  background: none;
+  box-shadow: none;
+  padding: 0;
+  margin-bottom: 60px;
+}
+
+.bike-frame {
+  position: relative;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 40px 20px 30px 20px;
+  background: rgba(20,20,20,0.98);
+  border-radius: 40px 40px 60px 60px;
+  box-shadow: 0 8px 32px 0 #ff1a1a80;
+  border: 2px solid #b30000;
+  overflow: visible;
+}
+
+.handlebar {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  width: 180px;
+  height: 20px;
+  background: linear-gradient(90deg, #b30000 0%, #ff1a1a 100%);
+  border-radius: 10px 10px 30px 30px;
+  transform: translateX(-50%);
+  box-shadow: 0 2px 8px #ff1a1a;
+}
+
+.front-wheel, .back-wheel {
+  position: absolute;
+  bottom: -40px;
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(circle at 60% 60%, #ff1a1a 60%, #b30000 100%);
+  border-radius: 50%;
+  box-shadow: 0 4px 16px #b30000;
+  z-index: 2;
+}
+
+.front-wheel {
+  left: 30px;
+}
+
+.back-wheel {
+  right: 30px;
+}
+
+.bike-body {
+  position: relative;
+  z-index: 3;
+  padding-bottom: 20px;
+}
+
+.bike-body h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  text-shadow: 0 0 10px #ff1a1a;
+  letter-spacing: 2px;
+  font-family: 'Orbitron', 'Segoe UI', Arial, sans-serif;
+}
+
+.wheel-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px ;
+}
+
+.wheel-input input {
+  width: 180px;
+  height: 48px;
+  border-radius: 24px;
+  border: none;
+  background: linear-gradient(90deg, #b30000 0%, #ff1a1a 100%);
+  color: #fff;
+  font-size: 1.1rem;
+  text-align: center;
+  box-shadow: 0 2px 8px #b30000;
+  outline: none;
+  transition:  0.3s, box-shadow 0.3s;
+  font-weight: bold;
+  font-family: 'Orbitron', 'Segoe UI', Arial, sans-serif;
+}
+
+.wheel-input input:focus {
+  background: linear-gradient(90deg, #ff1a1a 0%, #b30000 100%);
+  box-shadow: 0 4px 16px #ff1a1a;
+}
+
+#confirmationMsg {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #ff1a1a;
+  margin-top: 15px;
+  text-shadow: 0 0 8px #b30000;
+  animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+footer {
+  text-align: center;
+  padding: 20px 0;
+  background: rgba(20,20,20,0.98);
+  color: #ff1a1a;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  border-top: 2px solid #b30000;
+  margin-top: 40px;
+  font-family: 'Orbitron', 'Segoe UI', Arial, sans-serif;
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+  .bikes {
+    flex-direction: column;
+    align-items: center;
+  }
+  .bike-card {
+    width: 90%;
+  }
+}
+
+/* Orbitron font for badass look */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');

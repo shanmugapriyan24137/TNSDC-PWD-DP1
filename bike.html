@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shanmuga Bike Booking Showroom</title>
+  <link rel="stylesheet" href="bike1.css"/>
+</head>
+<body>
+  <header>
+    <h1>🏍️ Shanmuga Bike Booking Showroom</h1>
+    <p>Book your dream ride today!</p>
+  </header>
+
+  <section class="bike-gallery">
+    <h2>Available Bikes</h2>
+    <div class="bikes">
+      <div class="bike-card" data-bike="Yamaha R15">
+        <img src="r1.jpg" alt="Yamaha R15">
+        <h3>Yamaha R15</h3>
+        <button onclick="bookBike('Yamaha R15')">Book Now</button>
+      </div>
+      <div class="bike-card" data-bike="KTM Duke 390">
+        <img src="duke.jpg" alt="KTM Duke 390">
+        <h3>KTM Duke 390</h3>
+        <button onclick="bookBike('KTM Duke 390')">Book Now</button>
+      </div>
+      <div class="bike-card" data-bike="Royal Enfield Classic">
+        <img src="r.jpg" alt="Royal Enfield Classic">
+        <h3>Royal Enfield Classic</h3>
+        <button onclick="bookBike('Royal Enfield Classic')">Book Now</button>
+       
+      </div>
+      <div class="bike-card" data-bike="ns 200">
+        <img src="ns.jpg" alt="ns 200">
+        <h3>Ns 200</h3>
+        <button onclick="bookBike('ns 200')">Book Now</button>
+        </div>
+      
+      <div class="bike-card" data-bike="Mt-15">
+        <img src="mt.jpg" alt="Mt-15">
+        <h3>Mt-15</h3>
+        <button onclick="bookBike('Mt-15')">Book Now</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="booking-form" id="booking-form">
+  <div class="bike-frame">
+    <div class="handlebar"></div>
+    <div class="front-wheel"></div>
+    <div class="back-wheel"></div>
+    <div class="bike-body">
+      <h2>🏍️ Bike Booking Form</h2>
+      <form onsubmit="submitForm(event)">
+        <div class="wheel-input">
+          <input type="text" id="customerName" placeholder="Your Name" required />
+        </div>
+        <div class="wheel-input">
+          <input type="text" id="selectedBike" readonly placeholder="Selected Bike" required />
+        </div>
+        <div class="wheel-input">
+          <input type="date" id="bookingDate" required />
+        </div>
+        <div class="wheel-input">
+        <button type="submit" class="dashboard-btn">Confirm Booking</button>
+        </div>
+      </form>
+      <p id="confirmationMsg"></p>
+  <div id="popupMsg" style="display:none; position:fixed; top:30%; left:50%; transform:translate(-50%, -50%); background:green; color:white; padding:32px 48px; font-size:2.5rem; border-radius:16px; font-weight:bold; z-index:9999; box-shadow:0 4px 16px rgba(0,0,0,0.2); text-align:center;">Booking Done!</div>
+    </div>
+  </div>
+</section>
+
+  <footer>
+    <p>© 2025 Shanmuga Showroom. All rights reserved.</p>
+  </footer>
+
+  <script src="bike.js"></script>
+</body>
+</html>
